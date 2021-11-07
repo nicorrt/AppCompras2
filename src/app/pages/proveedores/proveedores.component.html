@@ -1,0 +1,30 @@
+<h3>Listado de Proveedores</h3>
+<a class="btn btn-primary float-md-right" href="/addprovee">Añadir
+nuevo presupuesto</a>
+<br>
+<table class="table table-bordered table-striped tabla" style="margin-top:
+40px;">
+ <thead>
+ <tr class="filters">
+ <th>ID</th>   
+ <th>Nombre</th>
+ <th>Email</th>
+ <th>Telefono</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr *ngFor="let proveedores of this.proveedores">
+ <td>{{ proveedores.key }}</td>   
+ <td>{{ proveedores.nombre }}</td>
+ <td>{{ proveedores.email }}</td>
+ <td>{{ proveedores.telefono }}</td>
+ <td>
+<button type="button" class="btn btn-danger" (click)="eliminarProveedores(proveedores)">Eliminar</button>
+ </td>
+ <td>
+    <button type="button" class="btn btn-success" routerLink="/editprovee/{{ proveedores.key }}">Editar</button>
+</td>
+ </tr>
+ </tbody>
+
+</table>
